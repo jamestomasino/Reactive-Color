@@ -1,7 +1,8 @@
+// Function source from: http://stackoverflow.com/questions/2541481/get-average-color-of-image-via-javascript
 function getAverageRGB(imgEl) {
 
-	var blockSize = 5, // only visit every 5 pixels
-	defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
+	var blockSize = 5,
+	defaultRGB = {r:0,g:0,b:0},
 	canvas = document.createElement('canvas'),
 	context = canvas.getContext && canvas.getContext('2d'),
 	data, width, height,
@@ -129,3 +130,4 @@ function hsl2rgb ( h, s, l )
 
 	return rgbString;
 }
+

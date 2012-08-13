@@ -1,12 +1,66 @@
 <html>
-	<head> </head>
+	<head>
+		<title>Reactive Design Proof-of-Concept</title>
+		<style type="text/css">
+			
+			body {
+				background-color: #555;
+			}
+
+			img {
+				margin-right: 10px;
+				float: left;
+				border: 1px solid #FFF;
+
+			}
+
+			#colors {
+				clear: both;
+				padding-top: 15px;
+			}
+
+			#colors div { 
+				display: block;
+				position: relative;
+				width: 100px;
+				height: 100px;
+				margin-right: 10px;
+				float: left;
+				border: 1px solid #FFF;
+			}
+
+			#colors div .label {
+				font-family:'Arial Narrow','Nimbus Sans L',sans-serif;
+				position: relative;
+				top: 60px;
+				left: 7px;
+			}
+		</style>
+	</head>
 	<body>
 
-		<img src="img1.jpg" />
-		<img src="img3.jpg" />
-		<img src="img2.jpg" />
+		<img src="img1.jpg" style="width: 100px;" alt="img" />
+		<img src="img3.jpg" style="width: 100px;" alt="img"  />
+		<img src="img2.jpg" style="width: 100px;" alt="img"  />
+		<img src="proxy.php?url=http://farm1.staticflickr.com/48/140056174_6de6c4e9e4.jpg" style="width: 100px;" alt="img"  />
 		
-		<h1 id="header">And this is some text to style</h1>
+		<div id="colors">
+			<div id="color1">
+				<p class="label"></p>
+			</div>
+			<div id="color2">
+				<p class="label"></p>
+			</div>
+			<div id="color3">
+				<p class="label"></p>
+			</div>
+			<div id="color4">
+				<p class="label"></p>
+			</div>
+			<div id="color5">
+				<p class="label"></p>
+			</div>
+		</div>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="reactivecolorlib.js"></script>
 		<script type="text/javascript" src="scripts.js"></script>

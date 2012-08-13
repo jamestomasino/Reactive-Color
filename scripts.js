@@ -1,8 +1,8 @@
-function updateColors ( id )
+function updateColors ( element )
 {
 	var hsvl, new_hsvl, rgb, compliment;
 
-	rgb = getAverageRGB(document.getElementById( id ));
+	rgb = getAverageRGB( element );
 	console.log ( 'Image Average RGB: #' + rgb );
 
 	// Set background color to average RGB for easy viewing
@@ -31,12 +31,19 @@ function updateColors ( id )
 
 function thumbClick ( image )
 {
-	updateColors( this.id );
+	updateColors( this );
 }
 
-document.getElementById('img').addEventListener('click', thumbClick );
-document.getElementById('img2').addEventListener('click', thumbClick );
-document.getElementById('img3').addEventListener('click', thumbClick );
+function onWindowLoad ()
+{
+	// Attach events to image tags
+	var images = document.getElementsByTagName('img');
+	var i = images.length; while (i--)
+	{
+		images[i].addEventListener('click', thumbClick );
+	}
 
-updateColors ( 'img' );
+	if (images.length) images[0].click();
+}
 
+$(window).load ( onWindowLoad );
